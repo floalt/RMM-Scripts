@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="34f2f253-ed15-4cec-8752-020d87833e71" Name="HP ILO Over All Check" Description="SW5zdGFsbGllcnQgZGllIEhQIElMTyBDTURsZWRzIHVuZCBmcmFndCBkaWUgSUxPIGFiLg==" Version="2.15.1.1" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{dcc926d7-323e-4db7-9f81-1bcd7bfe3f4a}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;IP&quot; Label=&quot;HP ILO IP:&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;PASS&quot; Label=&quot;HP ILO Passwort:&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;USER&quot; Label=&quot;HP ILO Benutzername:&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>504,1253</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="504,1253" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.15.1.1, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" Moniker="6f12b276-f92a-47e3-9a12-07cd1459547b" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="4ec1916f-ccfe-4725-8c22-13541c8eb266" m_bTextLinkChange="False" script="aQBmACgAIQAoAEcAZQB0AC0AQwBvAG0AbQBhAG4AZAAgACoASABQAEkATABPACoAIAAtAEUAcgByAG8AcgBBAGMAdABpAG8AbgAgAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAKQApAA0ACgB7AA0ACgAgACAAIAAgAFMAZQB0AC0ARQB4AGUAYwB1AHQAaQBvAG4AUABvAGwAaQBjAHkAIABCAHkAcABhAHMAcwAgAC0AUwBjAG8AcABlACAAUAByAG8AYwBlAHMAcwAgAC0ARgBvAHIAYwBlADsAIABbAFMAeQBzAHQAZQBtAC4ATgBlAHQALgBTAGUAcgB2AGkAYwBlAFAAbwBpAG4AdABNAGEAbgBhAGcAZQByAF0AOgA6AFMAZQBjAHUAcgBpAHQAeQBQAHIAbwB0AG8AYwBvAGwAIAA9ACAAWwBTAHkAcwB0AGUAbQAuAE4AZQB0AC4AUwBlAHIAdgBpAGMAZQBQAG8AaQBuAHQATQBhAG4AYQBnAGUAcgBdADoAOgBTAGUAYwB1AHIAaQB0AHkAUAByAG8AdABvAGMAbwBsACAALQBiAG8AcgAgADMAMAA3ADIAOwAgAGkAZQB4ACAAKAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABTAHkAcwB0AGUAbQAuAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQAKQAuAEQAbwB3AG4AbABvAGEAZABTAHQAcgBpAG4AZwAoACcAaAB0AHQAcABzADoALwAvAGMAaABvAGMAbwBsAGEAdABlAHkALgBvAHIAZwAvAGkAbgBzAHQAYQBsAGwALgBwAHMAMQAnACkAKQANAAoAIAAgACAAIABjAGgAbwBjAG8AIABpAG4AcwB0AGEAbABsACAAaABwAC0AaQBsAG8ALQBjAG0AZABsAGUAdABzACAALQBmAG8AcgBjAGUAIAAtAHkADQAKAH0ADQAKACQAZQBuAHYAOgBQAFMATQBvAGQAdQBsAGUAUABhAHQAaAArAD0AIgA7ACQAZQBuAHYAOgBQAHIAbwBnAHIAYQBtAEYAaQBsAGUAcwBcAEgAZQB3AGwAZQB0AHQALQBQAGEAYwBrAGEAcgBkAFwAUABvAHcAZQByAFMAaABlAGwAbABcAE0AbwBkAHUAbABlAHMAIgANAAoAJABlAHIAcgBvAHIAYwBvAHUAbgB0ACAAPQAgADAADQAKACQAbwB2AGUAcgBhAGwAbABpAG0AcABvAHIAdAAgAD0AIABHAGUAdAAtAEgAUABpAEwATwBIAGUAYQBsAHQAaABTAHUAbQBtAGEAcgB5ACAALQBTAGUAcgB2AGUAcgAgACQAcwBlAHIAdgBlAHIAIAAtAFUAcwBlAHIAbgBhAG0AZQAgACQAdQBzAGUAcgBuAGEAbQBlACAALQBQAGEAcwBzAHcAbwByAGQAIAAkAHAAYQBzAHMAdwBvAHIAZAAgAC0ARABpAHMAYQBiAGwAZQBDAGUAcgB0AGkAZgBpAGMAYQB0AGUAQQB1AHQAaABlAG4AdABpAGMAYQB0AGkAbwBuAA0ACgBbAHMAdAByAGkAbgBnAF0AJABpAHAAIAA9ACAAJABvAHYAZQByAGEAbABsAGkAbQBwAG8AcgB0AC4ASQBQAA0ACgBbAHMAdAByAGkAbgBnAF0AJABoAG8AcwB0AG4AYQBtAGUAIAA9ACAAJABvAHYAZQByAGEAbABsAGkAbQBwAG8AcgB0AC4ASABPAFMAVABOAEEATQBFAA0ACgBbAHMAdAByAGkAbgBnAF0AJABzAHQAYQB0AHUAcwB0AHkAcABlACAAPQAgACQAbwB2AGUAcgBhAGwAbABpAG0AcABvAHIAdAAuAFMAVABBAFQAVQBTAF8AVABZAFAARQANAAoAWwBzAHQAcgBpAG4AZwBdACQAcwB0AGEAdAB1AHMAbQBlAHMAcwBhAGcAZQAgAD0AIAAkAG8AdgBlAHIAYQBsAGwAaQBtAHAAbwByAHQALgBTAFQAQQBUAFUAUwBfAE0ARQBTAFMAQQBHAEUADQAKAGkAZgAoACQAcwB0AGEAdAB1AHMAdAB5AHAAZQAgAC0AbgBlACAAIgBPAEsAIgApAA0ACgB7AA0ACgAgACAAIAAgACQAZQByAHIAbwByAGMAbwB1AG4AdAArACsADQAKAH0ADQAKAA0ACgBpAGYAKAAkAHMAdABhAHQAdQBzAG0AZQBzAHMAYQBnAGUAIAAtAG4AZQAgACIATwBLACIAKQANAAoAewANAAoAIAAgACAAIAAkAGUAcgByAG8AcgBjAG8AdQBuAHQAKwArAA0ACgB9AA0ACgANAAoAJABwAHIAaQBuAHQAIAA9ACAAJABvAHYAZQByAGEAbABsAGkAbQBwAG8AcgB0ACAAfAAgAEYAbwByAG0AYQB0AC0AbABpAHMAdAANAAoADQAKACQAcAByAGkAbgB0AA0ACgANAAoADQAKAA0ACgANAAoA">
+          <p:RunPowerShellScript.InArgs>
+            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="server" ArgType="string" DisplayArg="Input Parameters.HP ILO IP:" DisplayName="server" Name="server" isRequired="False">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:String">[IP]</InArgument>
+              </p:InArg.Arg>
+            </p:InArg>
+            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="username" ArgType="password" DisplayArg="Input Parameters.HP ILO Benutzername:" DisplayName="username" Name="username" isRequired="False">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="p:Password">[USER]</InArgument>
+              </p:InArg.Arg>
+            </p:InArg>
+            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="password" ArgType="password" DisplayArg="Input Parameters.HP ILO Passwort:" DisplayName="password" Name="password" isRequired="False">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="p:Password">[PASS]</InArgument>
+              </p:InArg.Arg>
+            </p:InArg>
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="errorcount" ArgType="number" DisplayName="errorcount" Name="errorcount">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunPowerShellScript_errorcount]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+        <p:IfObject Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.15.1.1, Culture=neutral, PublicKeyToken=null" Condition="greater than or equal to" Condition_DisplayArg="greater than or equal to" DisplayName="If" sap:VirtualizedContainerService.HintSize="468,468" Moniker="bc6cb428-9f2c-4514-8fc0-5a47900a09f7" Result="[IfObject_Result]" ResultString="[IfObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="1" Value_Type="x:Double" Variable="[RunPowerShellScript_errorcount]" Variable_DisplayArg="Run PowerShell Script.errorcount" Variable_Type="x:Double" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="180,231" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:FailPolicy AssemblyName="PolicyExecutionEngine, Version=2.15.1.1, Culture=neutral, PublicKeyToken=null" DisplayName="Fail Policy" sap:VirtualizedContainerService.HintSize="142,81" Moniker="93e1df44-c1a3-4507-831e-c196e576411b" Result="[FailPolicy_Result]" ResultString="[FailPolicy_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="FailPolicy" m_bTextLinkChange="False" />
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:Double" Name="FailPolicy_Result" />
+                <Variable x:TypeArguments="x:String" Name="FailPolicy_ResultString" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral>
+                <p:ObjectLiteral.Value>
+                  <x:Double>1</x:Double>
+                </p:ObjectLiteral.Value>
+              </p:ObjectLiteral>
+            </InArgument>
+          </p:IfObject.Value>
+        </p:IfObject>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="IP" />
+        <Variable x:TypeArguments="p:Password" Name="PASS" />
+        <Variable x:TypeArguments="p:Password" Name="USER" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_errorcount" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>
