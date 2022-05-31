@@ -56,4 +56,4 @@ $check = Get-ChildItem -Path $folder | where { ($_.Length -gt $size_byte) -and (
     Get-ChildItem -Path $folder | where { $_.Extension -eq ".BAK" }| ft Name,Length,LastWriteTime
 
 # if ($check) { $code = 0 } else { $code = 1001 }
-if ($check) { exit 0 } else { exit = 1001 }
+if ($check) { exit 0 } else { exit 1001 }
