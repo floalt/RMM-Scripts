@@ -9,7 +9,8 @@ version: 0.1
 
 usage:
 
-    -Folder "path/to/folder/where/dumps/are/in"
+    -Folder 'path/to/folder/where/dumps/are/in'
+                   (don't use: "  use instead: ' )
     -Age 24        (Age in hours, default 24)
     -MinSize 500   (size in MB)
 

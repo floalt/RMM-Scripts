@@ -1,8 +1,18 @@
 ﻿<#
-description
+description:
 
     Checks if $file exists
     and if is older than $days
+
+usage:
+
+    -file 'path/to/file'
+                   (don't use: "  use instead: ' )
+    -days X        (max age in days)
+    
+    N-able Command Line:
+
+        -file 'C:\This is the Folder\and this ist the file.txt' -days 7
 
 author: flo.alt@fa-netz.de
 
