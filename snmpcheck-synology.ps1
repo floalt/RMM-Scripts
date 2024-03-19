@@ -9,7 +9,7 @@
     version: 0.5
 
     command-line:
-    -name "NAS Backup at my Customer" -ipadress 192.168.123.123 -community public
+    -name 'NAS Backup at my Customer' -ipadress 192.168.123.123 -community public
 
 #>
 

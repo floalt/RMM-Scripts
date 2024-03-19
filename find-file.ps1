@@ -3,10 +3,10 @@
  
     author: flo.alt@fa-netz.de
     https://github/floalt/
-    version: 0.5
+    version: 0.6
  
     command-line:
-    -filenames "file1.txt", "file2.txt" -searchpath "C:\search\path"
+    -filenames 'file1.txt', 'file2.txt' -searchpath 'C:\search\path'
 #>
 
 param (
@@ -15,7 +15,8 @@ param (
 )
 
 # Clear the variable $found
-$found = $null
+[int]$found = 0
+
 
 # Search for files in the specified path
 foreach ($filename in $filenames) {
@@ -26,9 +27,12 @@ foreach ($filename in $filenames) {
     }
 }
 
+
 # If no file is found, set $found to 0
 if (-not $found) {
     Write-Host "None of the files were found."
+    $found = 0
 }
 
-if ($found -eq 0) { exit 0 } else { exit 1001 }
+if ($found -eq 0) { exit 0 }
+if ($found -eq 1) { exit 1001 }

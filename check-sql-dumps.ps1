@@ -16,7 +16,7 @@ usage:
 
     N-able Command Line:
 
-        -Folder C:\SQLDumps -Age 12 -MinSize 500
+        -Folder 'C:\SQLDumps' -Age 12 -MinSize 500
 
 
 #>
