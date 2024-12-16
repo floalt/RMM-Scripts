@@ -21,10 +21,10 @@ author: flo.alt@fa-netz.de
 
 # Get variables from command line syntax
 param(
-    [string]$ilohostname = "ILOCNXD0S00DP",
-    [string]$user = "Administrator",
-    [string]$pass = "T9XkLTEwg29JUqJNKjDVmH7F",
-    [int]$hddnumber = 2  # Neue Variable für die Anzahl der erwarteten Festplatten
+    [string]$ilohostname,
+    [string]$user,
+    [string]$pass,
+    [int]$hddnumber
 )
 
 [int]$errorcount = 0
