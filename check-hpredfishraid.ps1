@@ -27,7 +27,7 @@ param(
     [int]$hddnumber
 )
 
-[int]$errorcount = 0
+[int]$global:errorcount = 0
 
 # Redfish API Base URL
 $baseUrl = "https://$ilohostname/redfish/v1"
@@ -42,7 +42,7 @@ function Invoke-RedfishQuery {
         return Invoke-RestMethod -Uri $url -Method Get -Headers @{ Authorization = "Basic $authHeader" }
     } catch {
         Write-Host "Error querying Redfish API: $_"
-        $global:errorcount++  # Zugriff auf global:errorcount
+        $global:errorcount++
         return $null
     }
 }
@@ -59,7 +59,7 @@ function Get-RAIDHealth {
             Write-Host "RAID is very healthy."
         } else {
             Write-Host "RAID is not feeling well: $health"
-            $global:errorcount++  # Zugriff auf global:errorcount
+            $global:errorcount++
         }
     }
 }
@@ -74,7 +74,7 @@ function Get-HDDState {
         $foundDrives = $response.Drives.Count  # Zählt die gefundenen Festplatten
         if ($foundDrives -ne $hddnumber) {
             Write-Host "Warning: Expected $hddnumber drives, but found $foundDrives."
-            $global:errorcount++  # Zugriff auf global:errorcount
+            $global:errorcount++
         }
 
         foreach ($drive in $response.Drives) {
@@ -89,13 +89,13 @@ function Get-HDDState {
                     Write-Host "Model: $model, Health: $health"
                 } else {
                     Write-Host "Could not retrieve model or health status for drive: $driveUrl"
-                    $global:errorcount++  # Zugriff auf global:errorcount
+                    $global:errorcount++
                 }
             }
         }
     } else {
         Write-Host "No drives found in the storage subsystem."
-        $global:errorcount++  # Zugriff auf global:errorcount
+        $global:errorcount++
     }
 }
 
@@ -104,7 +104,7 @@ Get-RAIDHealth
 Get-HDDState
 
 # Final Status
-if ($global:errorcount -eq 0) {  # Zugriff auf global:errorcount
+if ($global:errorcount -eq 0) {
     Write-Host "`nYeah, looks fantastic!"
     exit 0
 } else {
