@@ -6,7 +6,7 @@
 
     author: flo.alt@fa-netz.de
     https://github/floalt/
-    version: 0.6
+    version: 0.6.1
 
     command-line:
     -name 'NAS Backup at my Customer' -ipadress 192.168.123.123 -community public
@@ -58,7 +58,7 @@
         @{desc = 'System Uptime (sek)';oid = '1.3.6.1.4.1.55062.1.12.21.0';ok = 'nocheck';compare = ''}
         @{desc = 'Firmware Version';oid = '1.3.6.1.4.1.55062.1.12.6.0';ok = 'nocheck';compare = ''}
         @{desc = 'System Temperature';oid = '1.3.6.1.4.1.55062.1.12.11.0';ok = '61';compare = 'lt'}
-        @{desc = 'System Fan (rpm)';oid = '1.3.6.1.4.1.55062.1.12.9.1.3.1';ok = '500';compare = 'lt'}
+        @{desc = 'System Fan (rpm)';oid = '1.3.6.1.4.1.55062.1.12.9.1.3.1';ok = '500';compare = 'gt'}
         @{desc = 'RAID Status';oid = '1.3.6.1.4.1.55062.1.10.5.1.4.1';ok = 'Ready';compare = 'eq'}
         @{desc = 'HDD 1 Model';oid = '1.3.6.1.4.1.55062.1.10.2.1.4.1';ok = 'nocheck';compare = ''}
         @{desc = 'HDD 1 Health Status';oid = '1.3.6.1.4.1.55062.1.10.2.1.7.1';ok = 'Good';compare = 'eq'}
