@@ -191,14 +191,14 @@
                     break
                 }
                 gt {
-                    if (!($result.DATA -gt $ok)) {
+                    if (!([int]$result.DATA -gt $ok)) {
                         $errorcount++
                         Write-Host $desc": ^^ Error ^^`n"
                     }
                     break
                 }
                 lt {
-                    if (!($result.DATA -lt $ok)) {
+                    if (!([int]$result.DATA -lt $ok)) {
                         $errorcount++
                         Write-Host $desc": ^^ Error ^^`n"
                     }
