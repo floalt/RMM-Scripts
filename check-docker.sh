@@ -2,6 +2,7 @@
 
 # description:
 #   This script checks if all Docker containers defined in the specified docker-compose.yml are running.
+#   For a single docker compose project. There is nearly no usecase for that, better use 'check-multi-docker.sh'
 #
 # usage:
 #   ./check-docker.sh /path/to/docker-compose.yml
